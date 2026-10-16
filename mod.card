@@ -1,0 +1,37 @@
+-- Sharing metadata for the Kanto Life Gen2Recomped port.
+-- Read by tooling and the mod manager detail pane; never by the loader merge.
+return {
+  summary = "Ambient NPC life for Gen2Recomped: wandering humans and Pokemon "
+    .. "with daily routines, agendas, sleep, conversations, companions and "
+    .. "fly/teleport/surf departures across Generations 1-4. Every NPC keeps "
+    .. "a persistent interaction count; the 5th interaction triggers an "
+    .. "event (item gift, trade offer or battle for humans; item gift or wild "
+    .. "encounter for Pokemon) in every supported generation. Gen 4 "
+    .. "(Platinum) support is experimental.",
+  author = "jtfresh90",
+  contact = "https://github.com/jtfresh90/kantolife-gen2recomped",
+  tags = { "npc", "immersion", "routines", "generations-1-4" },
+  differences = {
+    changed = {
+      "Ported from the gen1recomp Kanto Life mod to the Gen2Recomped mod API; "
+        .. "generation dispatch now covers Gen 4 (Platinum, experimental) in "
+        .. "addition to Gens 1-3",
+    },
+    added = {
+      "Per-generation movement adapters: Gen 1/2 movement/range strings, "
+        .. "Gen 3 movementType support, Gen 4 direction + movementRangeX/Z",
+      "Ambient NPC engine for Gen 3 (FireRed/LeafGreen/Emerald) and Gen 4 "
+        .. "(Platinum) built on the Gen2Recomped world API",
+      "5th-interaction events in every supported generation via native "
+        .. "script commands, with persistent per-NPC counts and cooldowns",
+    },
+    known = {
+      "Gen 4 (Platinum) is experimental in Gen2Recomped itself; NPC features "
+        .. "there have not been verified in-game",
+    },
+  },
+  credits = {
+    { who = "jtfresh90", for_ = "the original Kanto Life mod this is ported from" },
+  },
+  compat = { engine = ">=0.7.6 <2.0.0", modApi = 2 },
+}
